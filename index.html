@@ -79,6 +79,9 @@
   <header>
     <h1>Hello, I'm Navalrag</h1>
     <p> BTech Student | Tech Enthusiast</p>
+    
+<p id="time" style="margin-top: 10px; font-size: 1.1em;"></p>
+
   </header>
 
   <section>
@@ -111,6 +114,22 @@
   <footer>
     &copy; 2025 Naval. Made with ❤️
   </footer>
-
+<script>
+    function updateTime() {
+      const timeElement = document.getElementById('time');
+      const options = {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true,
+      };
+      const timeString = new Intl.DateTimeFormat('en-IN', options).format(new Date());
+      timeElement.textContent = 'Current Time (IST): ' + timeString;
+    }
+  
+    updateTime(); // initial call
+    setInterval(updateTime, 1000); // update every second
+  </script>
 </body>
 </html>
